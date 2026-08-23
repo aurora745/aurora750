@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Google Search SEO Meta Tags -->
+    <title>AURORA | Luxury Obsidian Streetwear & Online Clothing Store Sri Lanka</title>
+    <meta name="title" content="AURORA | Luxury Obsidian Streetwear & Online Clothing Store Sri Lanka">
+    <meta name="description" content="Official AURORA Clothing Store. Shop premium 450GSM heavyweight hoodies, iridescent graphic oversized tees, tactical bomber jackets and luxury drops with islandwide cash on delivery in Sri Lanka. Contact WhatsApp 074 219 7320.">
+    <meta name="keywords" content="AURORA, AURORA clothing, AURORA store, AURORA Sri Lanka, AURORA clothing store, AURORA streetwear, luxury clothing brand Sri Lanka, oversized tees Colombo, heavyweight hoodies, tactical jackets, dark aesthetic fashion">
+    <meta name="author" content="AURORA Clothing Brand">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#06070a">
+    <link rel="canonical" href="https://auroraclothing.lk/">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://auroraclothing.lk/">
+    <meta property="og:title" content="AURORA | Luxury Obsidian Apparel & Streetwear Sri Lanka">
+    <meta property="og:description" content="Next-level luxury dark aesthetic clothing store. High-performance streetwear, heavyweight hoodies, and futuristic fashion drops. Order instantly via WhatsApp!">
+    <meta property="og:image" content="assets/images/logo.jpg">
+    <meta property="og:site_name" content="AURORA CLOTHING STORE">
+    <meta property="og:locale" content="en_LK">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://auroraclothing.lk/">
+    <meta property="twitter:title" content="AURORA | Luxury Obsidian Apparel & Streetwear">
+    <meta property="twitter:description" content="Shop luxury heavyweight streetwear, iridescent tees, and dark aesthetic apparel with islandwide delivery in Sri Lanka.">
+    <meta property="twitter:image" content="assets/images/logo.jpg">
+
+    <!-- Google Search Structured Data (Schema.org JSON-LD for Google Knowledge Graph & Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ClothingStore",
+          "@id": "https://auroraclothing.lk/#store",
+          "name": "AURORA CLOTHING STORE",
+          "alternateName": ["AURORA", "AURORA Sri Lanka", "AURORA Streetwear"],
+          "url": "https://auroraclothing.lk/",
+          "logo": "https://auroraclothing.lk/assets/images/logo.jpg",
+          "image": "https://auroraclothing.lk/assets/images/logo.jpg",
+          "description": "Premier luxury dark aesthetic clothing store and streetwear brand in Sri Lanka offering heavyweight hoodies, oversized tees, and tactical outerwear.",
+          "telephone": "+94742197320",
+          "priceRange": "Rs. 2500 - Rs. 18000",
+          "currenciesAccepted": "LKR",
+          "paymentAccepted": "Cash on Delivery, Bank Transfer",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Colombo",
+            "addressCountry": "LK"
+          },
+          "areaServed": "Sri Lanka",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+94742197320",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Sinhala"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://auroraclothing.lk/#website",
+          "url": "https://auroraclothing.lk/",
+          "name": "AURORA CLOTHING STORE",
+          "description": "Official online store for AURORA luxury apparel & streetwear",
+          "publisher": {
+            "@id": "https://auroraclothing.lk/#store"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://auroraclothing.lk/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        aurora: {
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            purple: '#9d4edd',
+                            dark: '#06070a',
+                            surface: '#0d101a',
+                            border: 'rgba(255, 255, 255, 0.08)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom Luxury Dark Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#06070a] text-slate-100 selection:bg-cyan-500 selection:text-black">
+
+    <!-- Interactive Background Aurora Engine -->
+    <canvas id="aurora-canvas"></canvas>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-cyan-950/60 via-purple-950/60 to-cyan-950/60 border-b border-white/5 py-1.5 px-4 text-center text-xs font-mono text-cyan-300 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <span>⚡ SPECIAL LAUNCH: Use code <strong class="text-white bg-cyan-500/20 px-1.5 py-0.5 rounded border border-cyan-400/40">AURORA10</strong> for 10% OFF + Islandwide Cash on Delivery!</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl overflow-hidden border border-cyan-500/30 group-hover:border-cyan-400 p-0.5 bg-slate-950 transition-all shadow-[0_0_15px_rgba(0,242,254,0.25)]">
+                    <img src="assets/images/logo.jpg" alt="AURORA Logo" class="w-full h-full object-cover rounded-lg transform group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div>
+                    <span class="font-heading text-2xl font-extrabold tracking-wider text-white group-hover:text-cyan-300 transition-colors">AURORA</span>
+                    <span class="block text-[9px] font-mono tracking-[0.25em] text-cyan-400/80 uppercase -mt-1">CLOTHING STORE</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#catalog" class="hover:text-cyan-300 transition-colors">Catalog</a>
+                <a href="#flash-deals" class="hover:text-cyan-300 transition-colors flex items-center gap-1">
+                    <span class="text-amber-400">⚡</span> Flash Deals
+                </a>
+                <a href="#categories" class="hover:text-cyan-300 transition-colors">Categories</a>
+                <a href="#guarantees" class="hover:text-cyan-300 transition-colors">Why AURORA</a>
+                <a href="#reviews" class="hover:text-cyan-300 transition-colors">Reviews</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-3">
+                
+                <!-- Seller Center Portal Button (Daraz-like link with Admin Status) -->
+                <a href="seller.html" id="header-seller-btn" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-500/40 hover:border-cyan-400 transition-all shadow-[0_0_12px_rgba(0,242,254,0.15)]">
+                    <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                    <span>Seller Studio</span>
+                    <span class="bg-cyan-400 text-black text-[9px] font-extrabold px-1.5 py-0.2 rounded-full">OWNER</span>
+                </a>
+
+                <!-- Wishlist Trigger Button -->
+                <button onclick="window.auroraApp.showToast('Wishlist feature active in customer profile', 'info')" class="relative p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-rose-400 hover:border-slate-700 transition-all">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 text-white font-mono text-[10px] font-bold flex items-center justify-center shadow-lg">0</span>
+                </button>
+
+                <!-- Shopping Bag Trigger Button -->
+                <button onclick="window.auroraApp.openCartDrawer()" class="relative p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all shadow-[0_0_15px_rgba(0,242,254,0.2)]">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-mono text-[10px] font-extrabold flex items-center justify-center shadow-lg">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <span>AURORA CYBER-LUXURY DROP // 2026 EDITION</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-white leading-tight">
+                        REDEFINE YOUR <br>
+                        <span class="text-aurora">FASHION IDENTITY</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Precision-engineered heavyweight cotton, luminescent iridescent detailing, and avant-garde obsidian silhouettes designed for ultimate luxury.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalog" class="btn-aurora">
+                            <span>Explore Catalog</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+
+                        <a href="seller.html" class="btn-aurora-outline">
+                            <i data-lucide="plus-circle" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Add Your Products (Daraz Hub)</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl font-bold font-mono text-cyan-400">100%</div>
+                            <div class="text-xs text-slate-400">Premium Cotton</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold font-mono text-purple-400">2-3 Days</div>
+                            <div class="text-xs text-slate-400">Islandwide Delivery</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold font-mono text-emerald-400">Cash On</div>
+                            <div class="text-xs text-slate-400">Delivery Available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Showcase (Featuring only the AURORA Logo) -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        
+                        <!-- Glowing backdrop ring -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-pink-500/30 rounded-3xl blur-2xl opacity-75 animate-pulse"></div>
+
+                        <!-- Hero Main Card with Official Logo -->
+                        <div class="relative glass-panel rounded-3xl p-6 border border-cyan-500/40 overflow-hidden shadow-2xl animate-float text-center">
+                            <div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 group p-4 flex flex-col items-center justify-center border border-cyan-500/20">
+                                <img src="assets/images/logo.jpg" alt="AURORA Official Logo" class="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-700 shadow-[0_0_40px_rgba(0,242,254,0.3)]" />
+                                
+                                <div class="absolute top-4 left-4 flex flex-col gap-2">
+                                    <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[10px] font-mono font-bold uppercase px-2.5 py-1 rounded-md backdrop-blur-md">Official Brand</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 flex items-center justify-between">
+                                <div class="text-left">
+                                    <div class="text-[11px] text-cyan-400 font-mono tracking-widest uppercase">LUXURY OBSIDIAN</div>
+                                    <div class="text-base font-bold text-white font-heading">AURORA FASHION HOUSE</div>
+                                    <div class="text-xs text-slate-400">Islandwide Express Dispatch</div>
+                                </div>
+                                <a href="seller.html" class="p-3 rounded-2xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-black border border-cyan-500/30 transition-all shadow-lg" title="Upload New Drops">
+                                    <i data-lucide="plus" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro Badges -->
+                        <div class="absolute -bottom-5 -left-4 glass-panel px-4 py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-3 shadow-xl hidden sm:flex">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-white">100% Authentic Quality</div>
+                                <div class="text-[10px] text-slate-400">Sri Lanka Islandwide Delivery</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Deals Section (Daraz Style) -->
+    <section id="flash-deals" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="p-6 md:p-8 rounded-3xl glass-panel border border-amber-500/30 bg-gradient-to-b from-amber-950/20 via-slate-900/80 to-slate-950/80 mb-10">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    
+                    <!-- Flash Sale Title & Timer -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="p-3 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                            <i data-lucide="zap" class="w-8 h-8 fill-amber-400 animate-bounce"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">FLASH DEALS</h3>
+                                <span class="badge-flash">UP TO 30% OFF</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">Special limited drops with exclusive launch discounts</p>
+                        </div>
+                    </div>
+
+                    <!-- Daraz-Style Real-time Countdown Timer -->
+                    <div class="flex items-center gap-2 bg-slate-950/90 p-2.5 rounded-2xl border border-slate-800">
+                        <span class="text-xs font-mono text-slate-400 uppercase mr-1">Ends In:</span>
+                        <div class="countdown-box" id="timer-hours">48</div>
+                        <span class="text-cyan-400 font-bold">:</span>
+                        <div class="countdown-box" id="timer-mins">35</div>
+                        <span class="text-cyan-400 font-bold">:</span>
+                        <div class="countdown-box" id="timer-secs">12</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flash Deals Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="flash-deals-grid">
+                <!-- Dynamically injected by app.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Catalog Section -->
+    <section id="catalog" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                <div>
+                    <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">CURATED LUXURY APPAREL</div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">ALL COLLECTIONS</h2>
+                </div>
+                <div class="text-xs font-mono text-slate-400" id="product-count">Loading collection...</div>
+            </div>
+
+            <!-- Filter and Search Bar Controls -->
+            <div class="glass-panel p-4 rounded-2xl mb-8 space-y-4">
+                
+                <!-- Category Filter Buttons (Daraz Style Tabs) -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categories">
+                    <button class="cat-btn active-cat px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-cyan-500 text-black" data-category="All">All Drops</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="Streetwear">Streetwear</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="T-Shirts">T-Shirts</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="Jackets">Jackets</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="Pants">Pants</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="Women">Women's Luxury</button>
+                    <button class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800" data-category="Accessories">Accessories</button>
+                </div>
+
+                <!-- Search and Sorting Bar -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-2 border-t border-slate-800/80">
+                    <div class="sm:col-span-8 relative">
+                        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="search-input" placeholder="Search hoodies, oversized tees, jackets, pants..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors" />
+                    </div>
+
+                    <div class="sm:col-span-4 relative">
+                        <select id="sort-select" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-slate-200 focus:outline-none focus:border-cyan-400 transition-colors cursor-pointer">
+                            <option value="featured">✨ Featured & Popular</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="discount">⚡ Highest Discount</option>
+                            <option value="newest">🕒 Newest Arrivals</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
+                <!-- Dynamically rendered by app.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose AURORA / Brand Guarantees -->
+    <section id="guarantees" class="py-16 relative border-t border-white/5 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">THE AURORA STANDARD</div>
+                <h3 class="text-3xl font-extrabold font-heading text-white">WHY SHOP WITH US</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center group hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-base mb-1">Islandwide Delivery</h4>
+                    <p class="text-xs text-slate-400">Fast delivery across all 25 districts in Sri Lanka within 2-3 working days.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center group hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="banknote" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-base mb-1">Cash On Delivery</h4>
+                    <p class="text-xs text-slate-400">Pay conveniently in cash when your parcel arrives at your doorstep.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center group hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-base mb-1">7-Day Size Exchange</h4>
+                    <p class="text-xs text-slate-400">Wrong fit? Enjoy our rapid size exchange guarantee with zero hassle.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center group hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-base mb-1">WhatsApp Live Support</h4>
+                    <p class="text-xs text-slate-400">Direct chat support with our styling team for size guidance & orders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">COMMUNITY PRAISE</div>
+                <h3 class="text-3xl font-extrabold font-heading text-white">WHAT OUR CLIENTS SAY</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-4 leading-relaxed">"The 450GSM Cyber Glow Hoodie is hands down the best quality streetwear piece in Sri Lanka. Heavy fabric, clean stitching, and the iridescent print looks insane at night!"</p>
+                    <div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-cyan-500/20 text-cyan-300 font-bold flex items-center justify-center font-heading text-sm">KS</div>
+                        <div>
+                            <div class="font-bold text-white text-xs">Kasun S.</div>
+                            <div class="text-[10px] text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified Buyer (Colombo)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-4 leading-relaxed">"Ordered via WhatsApp and received the parcel within 2 days to Kandy. The oversized boxy fit on the Hologram Tee is 10/10. Will definitely order more."</p>
+                    <div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center font-heading text-sm">DN</div>
+                        <div>
+                            <div class="font-bold text-white text-xs">Dilshan N.</div>
+                            <div class="text-[10px] text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified Buyer (Kandy)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-4 leading-relaxed">"Super sleek dark theme store and the seller panel makes it so easy to see stock details. High-end luxury clothing brand feel!"</p>
+                    <div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-pink-500/20 text-pink-300 font-bold flex items-center justify-center font-heading text-sm">SP</div>
+                        <div>
+                            <div class="font-bold text-white text-xs">Shenali P.</div>
+                            <div class="text-[10px] text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified Buyer (Galle)</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/images/logo.jpg" alt="AURORA" class="w-8 h-8 rounded-lg object-cover border border-cyan-500/40" />
+                        <span class="font-heading font-bold text-xl text-white">AURORA</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Luxury dark aesthetic clothing store & streetwear manufacturer based in Sri Lanka. Redefining modern apparel with high-end fabrics and futuristic design.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h5 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-3">Shop Drops</h5>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#catalog" class="hover:text-cyan-300 transition-colors">Cyber Streetwear</a></li>
+                        <li><a href="#catalog" class="hover:text-cyan-300 transition-colors">Oversized T-Shirts</a></li>
+                        <li><a href="#catalog" class="hover:text-cyan-300 transition-colors">Tactical Jackets</a></li>
+                        <li><a href="#catalog" class="hover:text-cyan-300 transition-colors">Luxury Women's Wear</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Seller Hub -->
+                <div>
+                    <h5 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-3">Seller Portal</h5>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="seller.html" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5"><i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-cyan-400"></i> Add New Product</a></li>
+                        <li><a href="seller.html" class="hover:text-cyan-300 transition-colors">Manage Stock & Pricing</a></li>
+                        <li><a href="seller.html" class="hover:text-cyan-300 transition-colors">Store Settings & WhatsApp</a></li>
+                        <li><a href="seller.html" class="hover:text-cyan-300 transition-colors">Backup Data (Export JSON)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Social -->
+                <div>
+                    <h5 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-3">Direct Contact</h5>
+                    <p class="text-xs text-slate-400 mb-3">Connect directly with our sales team via WhatsApp for instant inquiries & bulk orders.</p>
+                    <a href="https://wa.me/94742197320" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/80 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-lg">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp (074 219 7320)
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>&copy; 2026 AURORA CLOTHING STORE. All Rights Reserved.</div>
+                <div class="flex items-center gap-4">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <a href="seller.html" class="text-cyan-400 hover:underline">Seller Hub (Daraz Style)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================
+         MODALS & DRAWERS
+         =================================================================== -->
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop overflow-y-auto">
+        <div class="relative w-full max-w-3xl glass-panel rounded-3xl p-6 md:p-8 border border-slate-700 shadow-2xl my-8">
+            <button onclick="window.auroraApp.closeQuickView()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all z-20">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="quick-view-content">
+                <!-- Dynamically populated by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Backdrop -->
+    <div id="cart-backdrop" onclick="window.auroraApp.closeCartDrawer()" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden transition-opacity"></div>
+
+    <!-- Shopping Cart Slide-Over Drawer -->
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#0b0e18] border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        
+        <!-- Cart Header -->
+        <div class="p-5 border-b border-slate-800/80 flex items-center justify-between bg-slate-950">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-cyan-400"></i>
+                <h4 class="font-heading font-bold text-lg text-white">Your Shopping Bag</h4>
+            </div>
+            <button onclick="window.auroraApp.closeCartDrawer()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-3" id="cart-items-container">
+            <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- Promo Code & Summary Footer -->
+        <div class="p-5 border-t border-slate-800/80 bg-slate-950/90 space-y-4">
+            
+            <!-- Promo Code Input -->
+            <div class="flex gap-2">
+                <input type="text" id="promo-input" placeholder="Promo Code (e.g. AURORA10)" class="flex-1 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white uppercase focus:outline-none focus:border-cyan-400" />
+                <button onclick="window.auroraApp.applyPromoCode()" class="px-4 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-bold transition-all">Apply</button>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="space-y-1.5 text-xs text-slate-400">
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span class="font-mono text-slate-200" id="cart-subtotal">Rs. 0</span>
+                </div>
+                <div class="flex justify-between text-emerald-400">
+                    <span>Discount</span>
+                    <span class="font-mono" id="cart-discount">- Rs. 0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Delivery (Sri Lanka)</span>
+                    <span class="font-mono text-slate-200" id="cart-delivery">Rs. 350</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-slate-800">
+                    <span>Total Payable</span>
+                    <span class="font-mono text-cyan-400" id="cart-total">Rs. 0</span>
+                </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <button onclick="window.auroraApp.openCheckoutModal()" class="btn-aurora w-full py-3.5 text-sm">
+                <span>Proceed to WhatsApp Checkout</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- WhatsApp Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop overflow-y-auto">
+        <div class="relative w-full max-w-xl glass-panel rounded-3xl p-6 md:p-8 border border-cyan-500/30 shadow-2xl my-8">
+            
+            <button onclick="window.auroraApp.closeCheckoutModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-heading text-white">Complete Your Order</h3>
+                    <p class="text-xs text-slate-400">Order invoice will be sent directly to AURORA WhatsApp dispatch!</p>
+                </div>
+            </div>
+
+            <form onsubmit="window.auroraApp.submitOrderViaWhatsApp(event)" class="space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Full Name *</label>
+                        <input type="text" id="cust-name" required placeholder="e.g. Kasun Perera" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-400" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Mobile / WhatsApp No *</label>
+                        <input type="tel" id="cust-phone" required placeholder="e.g. 077 123 4567" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-400" />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Street Address *</label>
+                    <input type="text" id="cust-address" required placeholder="House No, Street Name" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-400" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">City / Town *</label>
+                        <input type="text" id="cust-city" required placeholder="e.g. Colombo, Kandy, Galle" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-400" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Delivery Region</label>
+                        <select id="checkout-region" onchange="window.auroraApp.updateCheckoutSummary()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-slate-200 focus:outline-none focus:border-cyan-400">
+                            <option value="colombo">Colombo & Suburbs (Rs. 350)</option>
+                            <option value="islandwide">Outstation Islandwide (Rs. 450)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Payment Method Radios -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Payment Option</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-cyan-400/50">
+                            <input type="radio" name="payment-method" value="Cash On Delivery (COD)" checked class="text-cyan-400 focus:ring-0" />
+                            <span class="text-xs font-bold text-white">Cash on Delivery</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-cyan-400/50">
+                            <input type="radio" name="payment-method" value="Bank Transfer / Online" class="text-cyan-400 focus:ring-0" />
+                            <span class="text-xs font-bold text-white">Bank Transfer</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Order Notes (Optional)</label>
+                    <input type="text" id="cust-notes" placeholder="e.g. Call before delivery, landmark near house" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-cyan-400" />
+                </div>
+
+                <!-- Summary Box -->
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-1.5">
+                    <div class="flex justify-between text-slate-400">
+                        <span>Items Subtotal:</span>
+                        <span class="font-mono text-white" id="co-subtotal">Rs. 0</span>
+                    </div>
+                    <div class="flex justify-between text-emerald-400">
+                        <span>Discount:</span>
+                        <span class="font-mono" id="co-discount">- Rs. 0</span>
+                    </div>
+                    <div class="flex justify-between text-slate-400">
+                        <span>Delivery Fee:</span>
+                        <span class="font-mono text-white" id="co-delivery">Rs. 350</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-bold text-cyan-400 pt-1.5 border-t border-slate-800">
+                        <span>Total to Pay:</span>
+                        <span class="font-mono" id="co-total">Rs. 0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm border border-emerald-400/40 flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Send Order to WhatsApp Dispatch</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/aurora-canvas.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        // Init Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) window.lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
